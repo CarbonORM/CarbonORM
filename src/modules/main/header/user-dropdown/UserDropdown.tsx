@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useTranslation } from 'react-i18next';
+
 import styled from 'styled-components';
 import { PfDropdown, PfImage } from '@profabric/react-components';
 import { setAuthentication } from 'store/reducers/auth';
@@ -106,7 +106,7 @@ declare const FB: any;
 
 const UserDropdown = () => {
   const navigate = useNavigate();
-  const [t] = useTranslation();
+  
   const dispatch = useDispatch();
   const authentication = useSelector((state: any) => state.auth.authentication);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -171,13 +171,13 @@ const UserDropdown = () => {
         <UserBody>
           <div className="row">
             <div className="col-4 text-center">
-              <Link to="/">{t<string>('header.user.followers')}</Link>
+              <Link to="/">header.user.followers</Link>
             </div>
             <div className="col-4 text-center">
-              <Link to="/">{t<string>('header.user.sales')}</Link>
+              <Link to="/">header.user.sales</Link>
             </div>
             <div className="col-4 text-center">
-              <Link to="/">{t<string>('header.user.friends')}</Link>
+              <Link to="/">header.user.friends</Link>
             </div>
           </div>
         </UserBody>
@@ -187,14 +187,14 @@ const UserDropdown = () => {
             className="btn btn-default btn-flat"
             onClick={navigateToProfile}
           >
-            {t<string>('header.user.profile')}
+            header.user.profile
           </button>
           <button
             type="button"
             className="btn btn-default btn-flat float-right"
             onClick={logOut}
           >
-            {t<string>('login.button.signOut')}
+            login.button.signOut
           </button>
         </UserFooter>
       </div>

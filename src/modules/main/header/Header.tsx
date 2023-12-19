@@ -1,6 +1,6 @@
 import {useCallback} from 'react';
 import {Link} from 'react-router-dom';
-import {useTranslation} from 'react-i18next';
+
 import {useDispatch, useSelector} from 'react-redux';
 import {toggleControlSidebar, toggleSidebarMenu} from 'store/reducers/ui';
 import MessagesDropdown from 'modules/main/header/messages-dropdown/MessagesDropdown';
@@ -9,7 +9,7 @@ import LanguagesDropdown from 'modules/main/header/languages-dropdown/LanguagesD
 import UserDropdown from 'modules/main/header/user-dropdown/UserDropdown';
 
 const Header = () => {
-  const [t] = useTranslation();
+  
   const dispatch = useDispatch();
   const navbarVariant = useSelector((state: any) => state.ui.navbarVariant);
   const headerBorder = useSelector((state: any) => state.ui.headerBorder);
@@ -44,12 +44,12 @@ const Header = () => {
         </li>
         <li className="nav-item d-none d-sm-inline-block">
           <Link to="/" className="nav-link">
-            {t<string>('header.label.home')}
+            header.label.home
           </Link>
         </li>
         <li className="nav-item d-none d-sm-inline-block">
           <Link to="/" className="nav-link">
-            {t<string>('header.label.contact')}
+            header.label.contact
           </Link>
         </li>
       </ul>

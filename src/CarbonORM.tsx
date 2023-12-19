@@ -1,5 +1,5 @@
 import {CarbonReact} from "@carbonorm/carbonreact";
-import {iUsers} from "C6";
+import {iUsers} from "api/rest/C6";
 import {MemoryRouter, HashRouter} from 'react-router-dom';
 
 

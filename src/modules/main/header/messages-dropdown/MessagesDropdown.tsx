@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import {useTranslation} from 'react-i18next';
+
 import {PfDropdown, PfImage} from '@profabric/react-components';
 import styled from 'styled-components';
 
@@ -25,7 +25,7 @@ export const StyledDropdown = styled(PfDropdown)`
 `;
 
 const MessagesDropdown = () => {
-  const [t] = useTranslation();
+  
 
   return (
     <StyledDropdown hideArrow>
@@ -54,10 +54,7 @@ const MessagesDropdown = () => {
               <p className="text-sm text-muted">
                 <i className="far fa-clock mr-1" />
                 <span>
-                  {t<string>('header.messages.ago', {
-                    quantity: '30',
-                    unit: 'Minutes'
-                  })}
+                  header.messages.ago
                 </span>
               </p>
             </div>
@@ -84,10 +81,7 @@ const MessagesDropdown = () => {
               <p className="text-sm text-muted">
                 <i className="far fa-clock mr-1" />
                 <span>
-                  {t<string>('header.messages.ago', {
-                    quantity: '3',
-                    unit: 'Hours'
-                  })}
+                  header.messages.ago
                 </span>
               </p>
             </div>
@@ -116,10 +110,7 @@ const MessagesDropdown = () => {
               <p className="text-sm text-muted">
                 <i className="far fa-clock mr-1" />
                 <span>
-                  {t<string>('header.messages.ago', {
-                    quantity: '4',
-                    unit: 'Hours'
-                  })}
+                  header.messages.ago
                 </span>
               </p>
             </div>
@@ -127,7 +118,7 @@ const MessagesDropdown = () => {
         </Link>
         <div className="dropdown-divider" />
         <Link to="/" className="dropdown-item dropdown-footer">
-          {t<string>('header.messages.seeAll')}
+          header.messages.seeAll
         </Link>
       </div>
     </StyledDropdown>

@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import {useTranslation} from 'react-i18next';
+
 import styled from 'styled-components';
 import {PfDropdown} from '@profabric/react-components';
 
@@ -24,7 +24,7 @@ export const StyledDropdown = styled(PfDropdown)`
 `;
 
 const NotificationsDropdown = () => {
-  const [t] = useTranslation();
+  
 
   return (
     <StyledDropdown hideArrow>
@@ -34,56 +34,41 @@ const NotificationsDropdown = () => {
       </div>
       <div slot="menu">
         <span className="dropdown-item dropdown-header">
-          {t<string>('header.notifications.count', {quantity: '15'})}
+          header.notifications.count
         </span>
         <div className="dropdown-divider" />
         <Link to="/" className="dropdown-item">
           <i className="fas fa-envelope mr-2" />
           <span>
-            {t<string>('header.notifications.newMessagesCount', {
-              quantity: '4'
-            })}
+            header.notifications.newMessagesCount
           </span>
           <span className="float-right text-muted text-sm">
-            {t<string>('measurement.quantityUnit', {
-              quantity: '3',
-              unit: 'mins'
-            })}
+            measurement.quantityUnit
           </span>
         </Link>
         <div className="dropdown-divider" />
         <Link to="/" className="dropdown-item">
           <i className="fas fa-users mr-2" />
           <span>
-            {t<string>('header.notifications.friendRequestsCount', {
-              quantity: '5'
-            })}
+            header.notifications.friendRequestsCount
           </span>
           <span className="float-right text-muted text-sm">
-            {t<string>('measurement.quantityUnit', {
-              quantity: '12',
-              unit: 'hours'
-            })}
+            measurement.quantityUnit
           </span>
         </Link>
         <div className="dropdown-divider" />
         <Link to="/" className="dropdown-item">
           <i className="fas fa-file mr-2" />
           <span>
-            {t<string>('header.notifications.reportsCount', {
-              quantity: '3'
-            })}
+            header.notifications.reportsCount
           </span>
           <span className="float-right text-muted text-sm">
-            {t<string>('measurement.quantityUnit', {
-              quantity: '2',
-              unit: 'days'
-            })}
+            measurement.quantityUnit
           </span>
         </Link>
         <div className="dropdown-divider" />
         <Link to="/" className="dropdown-item dropdown-footer">
-          {t<string>('header.notifications.seeAll')}
+          header.notifications.seeAll
         </Link>
       </div>
     </StyledDropdown>

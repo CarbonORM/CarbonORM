@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useFormik } from 'formik';
-import { useTranslation } from 'react-i18next';
+
 import { setAuthentication } from 'store/reducers/auth';
 import { setWindowClass } from 'utils/helpers';
 import { PfCheckbox, PfButton } from '@profabric/react-components';
@@ -23,7 +23,7 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
-  const [t] = useTranslation();
+  
 
   const login = async (email: string, password: string) => {
     try {
@@ -99,7 +99,7 @@ const Login = () => {
           </Link>
         </div>
         <div className="card-body">
-          <p className="login-box-msg">{t<string>('login.label.signIn')}</p>
+          <p className="login-box-msg">login.label.signIn</p>
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <InputGroup className="mb-3">
@@ -155,7 +155,7 @@ const Login = () => {
             <div className="row">
               <div className="col-8">
                 <PfCheckbox checked={false}>
-                  {t<string>('login.label.rememberMe')}
+                  login.label.rememberMe
                 </PfCheckbox>
               </div>
               <div className="col-4">
@@ -165,7 +165,7 @@ const Login = () => {
                   loading={isAuthLoading}
                   disabled={isFacebookAuthLoading || isGoogleAuthLoading}
                 >
-                  {t<string>('login.button.signIn.label')}
+                  login.button.signIn.label
                 </PfButton>
               </div>
             </div>
@@ -179,9 +179,7 @@ const Login = () => {
               disabled={isAuthLoading || isGoogleAuthLoading}
             >
               <i className="fab fa-facebook mr-2" />
-              {t<string>('login.button.signIn.social', {
-                what: 'Facebook',
-              })}
+              login.button.signIn.social
             </PfButton>
             <PfButton
               block
@@ -191,17 +189,17 @@ const Login = () => {
               disabled={isAuthLoading || isFacebookAuthLoading}
             >
               <i className="fab fa-google mr-2" />
-              {t<string>('login.button.signIn.social', { what: 'Google' })}
+              login.button.signIn.social
             </PfButton>
           </div>
           <p className="mb-1">
             <Link to="/forgot-password">
-              {t<string>('login.label.forgotPass')}
+              login.label.forgotPass
             </Link>
           </p>
           <p className="mb-0">
             <Link to="/register" className="text-center">
-              {t<string>('login.label.registerNew')}
+              login.label.registerNew
             </Link>
           </p>
         </div>

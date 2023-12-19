@@ -1,10 +1,10 @@
-import postUsers from "api/rest/postUsers";
+import Users from "api/rest/Users";
 import {useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import {toast} from 'react-toastify';
 import {useFormik} from 'formik';
-import {useTranslation} from 'react-i18next';
+
 import * as Yup from 'yup';
 // import {loginUser} from '@store/reducers/auth';
 import {setWindowClass} from 'utils/helpers';
@@ -22,7 +22,7 @@ const Register = () => {
     const [isAuthLoading, setAuthLoading] = useState(false);
     const [isGoogleAuthLoading, setGoogleAuthLoading] = useState(false);
     const [isFacebookAuthLoading, setFacebookAuthLoading] = useState(false);
-    const [t] = useTranslation();
+    
     const dispatch = useDispatch();
 
     const navigate = useNavigate();
@@ -39,7 +39,7 @@ const Register = () => {
 
             setAuthLoading(true);
 
-            const response = await postUsers({
+            const response = await Users.Post({
                 user_username: values.username,
                 user_email: values.email,
                 user_password: values.password
@@ -157,7 +157,7 @@ const Register = () => {
                     </Link>
                 </div>
                 <div className="card-body">
-                    <p className="login-box-msg">{t<string>('register.registerNew')}</p>
+                    <p className="login-box-msg">register.registerNew</p>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
                             <InputGroup className="mb-3">
@@ -276,7 +276,7 @@ const Register = () => {
                                     loading={isAuthLoading}
                                     disabled={isGoogleAuthLoading || isFacebookAuthLoading}
                                 >
-                                    {t<string>('register.label')}
+                                    register.label
                                 </PfButton>
                             </div>
                         </div>
@@ -290,9 +290,7 @@ const Register = () => {
                             disabled={isAuthLoading || isGoogleAuthLoading}
                         >
                             <i className="fab fa-facebook mr-2"/>
-                            {t<string>('login.button.signIn.social', {
-                                what: 'Facebook',
-                            })}
+                            login.button.signIn.social
                         </PfButton>
                         <PfButton
                             block
@@ -302,11 +300,11 @@ const Register = () => {
                             disabled={isAuthLoading || isFacebookAuthLoading}
                         >
                             <i className="fab fa-google mr-2"/>
-                            {t<string>('login.button.signUp.social', {what: 'Google'})}
+                            login.button.signUp.social
                         </PfButton>
                     </div>
                     <Link to="/login" className="text-center">
-                        {t<string>('register.alreadyHave')}
+                        register.alreadyHave
                     </Link>
                 </div>
             </div>

@@ -9,13 +9,13 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.min.css');
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700');
 
-@import '../../node_modules/admin-lte/plugins/fontawesome-free/css/all.min.css';
-@import '../../node_modules/admin-lte/plugins/icheck-bootstrap/icheck-bootstrap.min.css';
+@import '../../node_modules/@fortawesome/fontawesome-svg-core/styles.css';
+// @import '../../node_modules/admin-lte/src/icheck-bootstrap/icheck-bootstrap.min.css';
 
 @import "../../node_modules/bootstrap/scss/_functions.scss";
 @import "../../node_modules/bootstrap/scss/_variables.scss";
 
-@import "../../node_modules/admin-lte/build/scss/bootstrap-variables";
+@import "bootstrap/bootstrap-variables";
 
 
 /**
@@ -46,22 +46,22 @@ $container-max-widths: (
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-
 // Variables and Mixins
 // ---------------------------------------------------
 
-@import "../../node_modules/admin-lte/build/scss/variables";
+@import "../../node_modules/admin-lte/src/scss/variables";
 
-@import "../../node_modules/admin-lte/build/scss/variables-alt";
+@import "../../node_modules/admin-lte/src/scss/variables-dark";
 
-@import "./bootstrap/mixins";
+@import "../../node_modules/admin-lte/src/scss/mixins";
 
-@import "../../node_modules/admin-lte/build/scss/parts/core";
-@import "../../node_modules/admin-lte/build/scss/parts/components";
-@import "../../node_modules/admin-lte/build/scss/parts/extra-components";
-@import "../../node_modules/admin-lte/build/scss/parts/pages";
-@import "../../node_modules/admin-lte/build/scss/parts/plugins";
-@import "../../node_modules/admin-lte/build/scss/parts/miscellaneous";
+@import "../../node_modules/admin-lte/src/scss/parts/core";
+
+@import "../../node_modules/admin-lte/src/scss/parts/core";
+@import "../../node_modules/admin-lte/src/scss/parts/components";
+@import "../../node_modules/admin-lte/src/scss/parts/extra-components";
+@import "../../node_modules/admin-lte/src/scss/parts/pages";
+@import "../../node_modules/admin-lte/src/scss/parts/miscellaneous";
 
 @import '../../node_modules/react-toastify/dist/ReactToastify.min.css';
 
@@ -76,3 +76,6 @@ $container-max-widths: (
   outline: none;
   cursor: pointer;
 }
+
+
+

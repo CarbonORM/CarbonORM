@@ -1,11 +1,11 @@
-import {useTranslation} from 'react-i18next';
+
 import {DateTime} from 'luxon';
 
 // @ts-ignore
 import packageJSON from '../../../../package.json';
 
 const Footer = () => {
-  const [t] = useTranslation();
+  
 
   return (
     <footer className="main-footer">
@@ -17,7 +17,7 @@ const Footer = () => {
         <span>.</span>
       </strong>
       <div className="float-right d-none d-sm-inline-block">
-        <b>{t<string>('footer.version')}</b>
+        <b>footer.version</b>
         <span>&nbsp;{packageJSON.version}</span>
       </div>
     </footer>

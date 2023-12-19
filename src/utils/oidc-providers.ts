@@ -1,4 +1,4 @@
-import postUsers from "api/rest/postUsers";
+import Users from "api/rest/Users";
 import { UserManager, UserManagerSettings } from 'oidc-client-ts';
 import { sleep } from './helpers';
 
@@ -64,7 +64,7 @@ export const getFacebookLoginStatus = () => {
 
 export const authLogin = async (email: string, password: string) => {
 
-  const loginReturn = await postUsers({
+  const loginReturn = await Users.Post({
     user_username: email,
     user_password: password
   })

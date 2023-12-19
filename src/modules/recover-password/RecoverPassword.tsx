@@ -1,6 +1,6 @@
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+
 import { setWindowClass } from 'utils/helpers';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -8,7 +8,7 @@ import { Form, InputGroup } from 'react-bootstrap';
 import { PfButton } from '@profabric/react-components';
 
 const RecoverPassword = () => {
-  const [t] = useTranslation();
+  
 
   const { handleChange, values, handleSubmit, touched, errors } = useFormik({
     initialValues: {
@@ -43,7 +43,7 @@ const RecoverPassword = () => {
           </Link>
         </div>
         <div className="card-body">
-          <p className="login-box-msg">{t<string>('recover.oneStepAway')}</p>
+          <p className="login-box-msg">recover.oneStepAway</p>
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <InputGroup className="mb-3">
@@ -101,13 +101,13 @@ const RecoverPassword = () => {
               <div className="col-12">
                 <PfButton type="submit" block>
                   {/* @ts-ignore */}
-                  {t<string>('recover.changePassword')}
+                  recover.changePassword
                 </PfButton>
               </div>
             </div>
           </form>
           <p className="mt-3 mb-1">
-            <Link to="/login">{t<string>('login.button.signIn.label')}</Link>
+            <Link to="/login">login.button.signIn.label</Link>
           </p>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {useTranslation} from 'react-i18next';
+
 import {PfDropdown} from '@profabric/react-components';
 import styled from 'styled-components';
 
@@ -60,14 +60,11 @@ const languages: Language[] = [
 
 const LanguagesDropdown = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const {t, i18n} = useTranslation();
 
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-  };
+
 
   const getCurrentLanguage = (): Language => {
-    const currentLanguage = i18n.language;
+    const currentLanguage = 'US';
     if (currentLanguage) {
       const language = languages.find(
         (language: Language) => language.key === currentLanguage
@@ -96,12 +93,11 @@ const LanguagesDropdown = () => {
             key={language.key}
             className={`dropdown-item ${isActiveLanguage(language)}`}
             onClick={() => {
-              changeLanguage(language.key);
               setDropdownOpen(false);
             }}
           >
             <i className={`flag-icon ${language.icon} mr-2`} />
-            <span>{t<string>(language.label)}</span>
+            <span>{language.label}</span>
           </button>
         ))}
       </div>
